@@ -1,0 +1,168 @@
+/* ===== RESET (limpa formatação padrão do navegador) ===== */
+* {
+  margin: 0;                  /* Tira margem padrão de todos os elementos */
+  padding: 0;                 /* Tira espaçamento interno padrão */
+  box-sizing: border-box; /* Inclui borda e padding no cálculo da largura */
+}
+
+/* ===== ESTILO GERAL DA PÁGINA ===== */
+body {
+  font-family: Arial, sans-serif;  /* Fonte geral do site */
+  background-color: #111111  ;       /* Fundo preto na página toda */
+  color: #0f0e0e;                  /* Texto branco para contraste */
+}
+
+/* ===== ÁREA DO LOGIN ===== */
+.conteiner {
+  background-color: #f1e7e7;       /* Fundo cinza bem escuro na área de login */
+  width: 100%;                     /* Ocupar 100% da largura disponível */
+  max-width: 400px;                /* Mas não passar de 400px de largura */
+  margin: 20px auto;               /* Centraliza a caixa no meio da tela (horizontal) */
+  padding: 20px;                   /* Espaço interno da caixa de login */
+  border-radius: 8px;              /* Cantos arredondados na caixa */
+}
+
+/* Título "Login" */
+.conteiner h1 {
+  text-align: center;              /* Centraliza o texto "Login" */
+  margin-bottom: 20px;             /* Espaço embaixo do título */
+}
+
+/* === CAMPOS DE USUÁRIO E SENHA === */
+.box-user {
+  margin-bottom: 15px;             /* Espaço embaixo de cada campo (usuário/senha) */
+}
+
+/* Input de texto e senha */
+.box-user input {
+  width: 100%;                     /* Campo ocupa toda a largura da caixa de login */
+  padding: 8px;                    /* Espaço interno dentro do input */
+  border-radius: 4px;              /* Cantos arredondados no input */
+  border: 1px solid #555555;       /* Borda cinza ao redor do input */
+  background-color: #f1ecf5;       /* Fundo claro no input */
+  color: #0a0909;                  /* Texto branco no input */
+}
+
+/* Label "Usuário" / "Senha" */
+.box-user label {
+  display: block;                 
+  margin-top: 5px;                 
+  font-size: 14px;                               
+}
+
+/* ===== LINK "ESQUECEU A SENHA?" ===== */
+.options {
+  text-align: right;               /* Alinha o link para a direita */
+  margin-bottom: 15px;             /* Espaço embaixo do bloco do link */
+}
+
+.options a {
+  color: #0c0b0b;                  /* Cor do link em branco */
+  font-size: 14px;                 /* Tamanho da fonte do link */
+  text-decoration: none;           /* Remove o sublinhado padrão */
+}
+
+.options a:hover {
+  text-decoration: underline;      /* Quando passa o mouse, o link fica sublinhado */
+}
+
+/* ===== BOTÃO "ENTRAR" ===== */
+.btn-login {
+  width: 100%;                     /* Botão ocupa toda a largura da caixa de login */
+  padding: 10px;                   /* Espaço interno do botão */
+  border: none;                    /* Remove borda padrão do botão */
+  border-radius: 4px;              /* Cantos arredondados no botão */
+  background-color: #800000;       /* Cor de fundo bordô (vermelho escuro) */
+  color: #ffffff;                  /* Texto branco no botão */
+  font-size: 16px;                 /* Tamanho da fonte do botão */
+  cursor: pointer;                 /* Muda o cursor para mãozinha ao passar por cima */
+}
+
+.btn-login:hover {
+  background-color: #a00000;       /* Deixa o botão um pouco mais claro quando passa o mouse */
+}
+
+/* ================================================================== */
+/* ===================== ESTILIZAÇÃO DOS CARROS ===================== */
+/* ================================================================== */
+
+/* TABELAS DOS PRODUTOS (CARROS) */
+.produto {
+  width: 100%;                     /* Tabela ocupa 100% da largura disponível */
+  max-width: 700px;                /* Mas não passa de 700px de largura */
+  margin: 20px auto;               /* Centraliza a tabela e dá espaço em cima/baixo */
+  border-collapse: collapse;       /* Junta as bordas da tabela */
+  background-color:#ffffff;       /* Fundo branco na tabela do carro */
+  color: #111111                 /* Texto branco nas tabelas */
+}
+
+/* Células de título (th) da tabela */
+.produto th {
+  padding: 10px;                   /* Espaço interno nas células */
+  vertical-align: top;             /* Alinha o conteúdo no topo da célula */
+}
+
+/* ===== IMAGEM DO CARRO E TEXTO AO LADO ===== */
+
+/* Célula da ESQUERDA (imagem + descrição) */
+.produto th:first-child {
+  position: relative;              /* Permite usar posicionamento relativo se precisar */
+}
+
+/* Primeiro div dentro do th (onde está a imagem) */
+.produto th:first-child div:first-child {
+  float: left;                     /* Faz a imagem "flutuar" à esquerda */
+  margin-right: 15px;              /* Espaço entre a imagem e o texto ao lado */
+}
+
+/* Imagem do carro */
+.produto th:first-child img {
+  display: block;                  /* Remove espaço extra embaixo da imagem */
+  width: 180px;                    /* Largura fixa da imagem (igual ao HTML) */
+}
+
+/* Todos os outros divs (texto) depois da imagem */
+.produto th:first-child div:not(:first-child) {
+  margin-left: 200px;              /* Joga o texto para a direita da imagem */
+  line-height: 1.4;                /* Altura das linhas (melhora a leitura) */
+  margin-bottom: 2px;              /* Pequeno espaço entre as linhas de texto */
+}
+
+/* NOME DO VEÍCULO EM BORDÔ (3º div dentro da célula: Onix / Fiesta / HB20) */
+.produto th:first-child div:nth-child(3) {
+  color: #800000;                  /* Bordô para o nome do veículo */
+  font-size: 18px;                 /* Aumenta um pouco o tamanho do nome */
+  font-weight: bold;               /* Deixa o nome em negrito */
+}
+
+/* ===== CÉLULA DA DIREITA (QUANTIDADE E BOTÕES) ===== */
+.produto th:last-child {
+  width: 180px;                    /* Largura fixa para a coluna de quantidade */
+  text-align: center;              /* Centraliza o conteúdo dessa célula */
+}
+
+/* Botões + e - */
+.produto th:last-child input[type="button"] {
+  padding: 5px 10px;               /* Espaço interno do botão de quantidade */
+  margin: 0 5px;                   /* Espaço entre os botões e o número */
+  border-radius: 4px;              /* Cantos arredondados dos botões */
+  border: 1px solid #555555;       /* Borda cinza nos botões */
+  background-color: #222222;       /* Fundo escuro nos botões */
+  color: #ffffff;                  /* Texto branco nos botões */
+  cursor: pointer;                 /* Mãozinha quando passa o mouse */
+}
+
+/* Número que mostra a quantidade (span) */
+.produto th:last-child span {
+  display: inline-block;           /* Permite aplicar padding no span */
+  min-width: 20px;                 /* Largura mínima para o número */
+  text-align: center;              /* Centraliza o número dentro do span */
+}
+
+a {
+  box-sizing: border-box;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}

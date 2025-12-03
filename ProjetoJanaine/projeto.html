@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- Define que este arquivo é um documento HTML5 -->
+<html lang="pt-BR">
+<!-- lang="pt-BR" informa que o conteúdo está em português do Brasil -->
+
+<head>
+  <!-- Informa o padrão de caracteres (permite acentos, ç, ã etc.) -->
+  <meta charset="UTF-8">
+  
+  <!-- Deixa o site responsivo no celular
+       width=device-width -> usa a largura da tela do aparelho
+       initial-scale=1.0 -> zoom inicial normal (100%) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título que aparece na aba do navegador -->
+  <title>Loja de Veículos - Login e Produtos</title>
+
+  <!-- Conexão com o arquivo CSS externo (estilização da página)
+       href="style.css" -> nome do arquivo de estilo que está na mesma pasta -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Tudo que aparece na tela para o usuário fica dentro do <body> -->
+
+  <!-- === ÁREA DO LOGIN ==== -->
+  <!-- div = bloco de conteúdo. class="conteiner" é o nome que o CSS usa para estilizar -->
+  <div class="conteiner">
+
+    <!-- Título da área de login -->
+    <h1>Login</h1>
+
+    <!-- Formulário de login
+         action="#" -> não envia para lugar nenhum (somente exemplo)
+         method="post" -> método de envio dos dados (padrão para formulários de login) -->
+    <form action="#" method="post">
+
+      <!-- ===== CAMPO DO USUÁRIO ===== -->
+      <!-- div para agrupar o input e o label do usuário -->
+      <div class="box-user">
+        <!-- Campo de texto onde o usuário digita o nome de usuário
+             id="username" -> identificador único do campo
+             name="username" -> nome do campo que será enviado no formulário
+             placeholder="usuário" -> texto cinza dentro da caixa antes de digitar
+             required -> torna o campo obrigatório -->
+        <input type="text" id="username" name="username" placeholder="usuário" required>
+
+        <!-- label -> rótulo do campo
+             for="username" -> liga este texto ao input com id="username" -->
+        <label for="username">Usuário</label>
+      </div>
+
+      <!-- ===== CAMPO DA SENHA ===== -->
+      <div class="box-user">
+        <!-- Campo de senha (os caracteres ficam escondidos com bolinhas)
+             type="password" -> indica que é uma senha -->
+        <input type="password" id="password" name="password" placeholder="Senha" required>
+
+        <!-- Rótulo do campo de senha -->
+        <label for="password">Senha</label>
+      </div>
+
+      <!-- Área do link "Esqueceu a senha?" -->
+      <div class="options">
+        <!-- a = link
+             href="#" -> ainda não leva para uma página real, só exemplo -->
+        <a href="#">Esqueceu a senha?</a>
+      </div>
+
+      <!-- Botão para enviar o formulário (fazer login)
+           type="submit" -> envia os dados do formulário
+           class="btn-login" -> nome usado no CSS para estilizar o botão -->
+      <button type="submit" class="btn-login">Entrar</button>
+
+    </form>
+  </div>
+  <!-- Fim da área de login -->
+
+  <!-- ================================================================== -->
+  <!-- ===================== TABELAS DOS PRODUTOS ======================= -->
+  <!-- ================================================================== -->
+
+  <!-- Cada carro está dentro de uma <table> (tabela)
+       class="produto" -> usado pelo CSS para estilizar todas as tabelas de carros -->
+
+  <!-- ===================== TABELA DO PRODUTO 1 ===================== -->
+  <table class="produto" border="2">
+    <!-- tr = table row (linha da tabela) -->
+    <tr>
+      <!-- th = table header (célula de título, aqui usamos como coluna normal) -->
+      <th>
+        <!-- Primeiro div: guarda apenas a imagem
+             O CSS vai usar esse primeiro div para colocar a imagem à esquerda -->
+        <div>
+          <!-- img = imagem
+               src -> caminho até a imagem
+               alt -> texto alternativo (caso a imagem não carregue ou para leitores de tela)
+               width="180" -> largura da imagem em pixels -->
+          <img src="OnixV2.jpeg" alt="Onix" width="180" />
+          <!-- OBS: confira se o caminho está certo: pasta "img" e arquivo "OnixV2.jpeg" -->
+        </div>
+
+        <!-- Os próximos divs são o texto que ficará ao lado da imagem.
+             O CSS que eu te passei faz o texto ir para o lado da foto. -->
+
+        <div><b>Veículo:</b></div>
+        <!-- Nome do veículo (este ficará em bordô pelo CSS) -->
+        <div><b>Onix Activ 1.4</b></div>
+        <div><b>Cor:</b> Vermelha</div>
+        <div><b>Fabricante:</b> Chevrolet</div>
+        <div><b>Preço:</b><span id="Oni">68.900 R$</span></div>
+        <div><b>Estoque:</b> 5</div>
+      </th>
+
+      <!-- Segunda célula (coluna da direita): quantidade e botões + e - -->
+      <th>
+        <!-- Texto simples "Quantidade:" -->
+        Quantidade:
+        <!-- Botão para diminuir a quantidade
+             type="button" -> botão comum (não envia formulário)
+             value="-" -> texto que aparece no botão
+             onclick="subtrair()" -> chama a função JavaScript subtrair() quando clicar -->
+        <br><input type="button" value="-" onclick="subtrair()">
+
+        <!-- span -> usado para mostrar a quantidade atual
+             id="span" -> identificador que o JavaScript usa para alterar o número -->
+        <span id="span">1</span>
+
+        <!-- Botão para aumentar a quantidade, chama a função somar() do JavaScript -->
+        <input type="button" value="+" onclick="somar()">
+      </th>
+    </tr>
+  </table>
+
+  <!-- ===================== TABELA DO PRODUTO 2 ===================== -->
+  <table class="produto" border="2">
+    <tr>
+      <th>
+        <div>
+          <!-- Imagem do segundo carro -->
+          <img src="New.fiesta.jpeg" alt="New Fiesta" width="180" />
+        </div>
+
+        <!-- Textos do segundo carro (ficam ao lado da foto pelo CSS) -->
+        <div><b>Veículo:</b></div>
+        <div><b>New Fiesta 1.6</b></div>
+        <div><b>Cor:</b> Branca</div>
+        <div><b>Fabricante:</b> Ford</div>
+        <div><b>Preço:</b> <span id="New">49.900 R$</span></div>
+        <div><b>Estoque:</b> 10</div>
+      </th>
+
+      <th>
+        Quantidade:
+        <!-- Botão de diminuir quantidade (segundo produto)
+             Chama a função menos() no JavaScript -->
+        <br><input type="button" value="-" onclick="menos()">
+
+        <!-- span que mostra a quantidade do segundo produto
+             id="yag" -> será usado pelo JavaScript -->
+        <span id="yag">1</span>
+
+        <!-- Botão de aumentar quantidade (segundo produto)
+             Chama a função mais() no JavaScript -->
+        <input type="button" value="+" onclick="mais()">
+      </th>
+    </tr>
+  </table>
+
+  <!-- ===================== TABELA DO PRODUTO 3 ===================== -->
+  <table class="produto" border="2">
+    <tr>
+      <th>
+        <div>
+          <!-- Imagem do terceiro carro -->
+          <img src="HyundaiV.jpg" alt="Hyundai HB20S" width="180" />
+        </div>
+
+        <!-- Textos do terceiro carro -->
+        <div><b>Veículo:</b></div>
+        <div><b>HB20S Evolution 1.0</b></div>
+        <div><b>Cor:</b> Prata</div>
+        <div><b>Fabricante:</b> Hyundai</div>
+        <div><b>Preço:</b> <span id="Hyun">72.900 R$</span></div>
+        <div><b>Estoque:</b> 6</div>
+      </th>
+
+      <th>
+        Quantidade:
+        <!-- Botão para diminuir quantidade (terceiro produto)
+             Chama a função menorizar() no JavaScript -->
+        <br><input type="button" value="-" onclick="menorizar()">
+
+        <!-- span com a quantidade do terceiro produto -->
+        <span id="kratos">1</span>
+
+        <!-- Botão para aumentar quantidade (terceiro produto)
+             Chama a função adição() no JavaScript -->
+        <input type="button" value="+" onclick="adição()">
+      </th>
+    </tr>
+  </table>
+
+  <!-- ===================== ARQUIVO JAVASCRIPT ===================== -->
+  <!-- script -> conecta o HTML ao arquivo JavaScript externo
+       src="java.js" -> nome do arquivo que contém as funções:
+       subtrair(), somar(), menos(), mais(), menorizar(), adição()
+       Essas funções vão controlar o aumento/diminuição das quantidades. -->
+  <script src="java.js"></script>
+
+  <a href="Interior.html">Clique aqui para ver o inteior dos veículos</a>
+</body>
+</html>
